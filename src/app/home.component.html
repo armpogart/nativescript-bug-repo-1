@@ -1,10 +1,8 @@
 <GridLayout class="page" rows="*, auto">
-    <StackLayout row="0">
+    <StackLayout row="0" [ngSwitch]="selectedTab">
         <!-- router outlets -->
-        <page-router-outlet [visibility]="selectedTab === tabs.Home ? 'visible' : 'collapsed'"
-                            name="firstTab" actionBarVisibility="never"></page-router-outlet>
-        <page-router-outlet [visibility]="selectedTab === tabs.Favorites ? 'visible' : 'collapsed'"
-                name="secondTab" actionBarVisibility="never"></page-router-outlet>
+        <page-router-outlet *ngSwitchCase="tabs.Home" name="firstTab" actionBarVisibility="never"></page-router-outlet>
+        <page-router-outlet *ngSwitchCase="tabs.Favorites" name="secondTab" actionBarVisibility="never"></page-router-outlet>
     </StackLayout>
 
     <BottomNavigation row="1" titleVisibility="always" (tabSelected)="onBottomNavigationTabSelected($event)">
