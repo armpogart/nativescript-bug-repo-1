@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
-import { NativeScriptRouterModule, NSEmptyOutletComponent } from "nativescript-angular/router";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
+import { FirstComponent } from "~/app/first/first/first.component";
 import { HomeComponent } from "~/app/home.component";
+import { SecondComponent } from "~/app/second/second/second.component";
 
 const routes: Routes = [
     // https://github.com/angular/angular/issues/10981
@@ -19,14 +21,14 @@ const routes: Routes = [
             {
                 path: "first",
                 outlet: "firstTab",
-                component: NSEmptyOutletComponent,
-                loadChildren: "~/app/first/first.module#FirstModule",
+                component: FirstComponent,
+                // loadChildren: "~/app/first/first.module#FirstModule",
             },
             {
                 path: "second",
                 outlet: "secondTab",
-                component: NSEmptyOutletComponent,
-                loadChildren: "~/app/second/second.module#SecondModule",
+                component: SecondComponent,
+                // loadChildren: "~/app/second/second.module#SecondModule",
             }
         ],
     },

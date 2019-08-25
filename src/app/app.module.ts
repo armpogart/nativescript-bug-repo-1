@@ -1,10 +1,12 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativescriptBottomNavigationModule } from "nativescript-bottom-navigation/angular";
-import { HomeComponent } from "~/app/home.component";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { FirstComponent } from "~/app/first/first/first.component";
+import { HomeComponent } from "~/app/home.component";
+import { SecondComponent } from "~/app/second/second/second.component";
 
 @NgModule({
     bootstrap: [
@@ -18,6 +20,8 @@ import { AppComponent } from "./app.component";
     declarations: [
         AppComponent,
         HomeComponent,
+        FirstComponent,
+        SecondComponent,
     ],
     providers: [],
     schemas: [
